@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>peace</title>
+  <title>Vessel</title>
   <link rel="icon" type="image/gif" href="images/logo2.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
   <meta name="description" content="">
-  <meta property="og:title" content="peace">
+  <meta property="og:title" content="vessel">
   <meta property="og:description" content="">
   <meta property="og:image" content="">
-  <meta name="twitter:title" content="peace">
+  <meta name="twitter:title" content="vessel">
   <meta name="twitter:description" content="">
   <meta name="twitter:card" content="summary">
-  <link rel="icon" type="https://peace.sh/images/logo3.png" href="">
+  <link rel="icon" type="https://vessel.sh/images/logo3.png" href="">
   <meta name="theme-color" content="#6571ff" />
 
   <style>
@@ -29,9 +29,19 @@
       line-height: 1.5;
       margin: 0;
       padding: 0;
+      overflow: hidden;
     }
     a {
       text-decoration: none;
+    }
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
     #enter-overlay {
       position: fixed;
@@ -39,7 +49,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgb(6,6,6);
+      background-color: rgba(6,6,6,0.8);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -94,34 +104,15 @@
       color: #888;
       padding-bottom: 1rem;
     }
-    .input-container {
-      text-align: center;
-      margin-top: 1rem;
-    }
-    .input-container input {
-      padding: 0.5rem;
-      width: 80%;
-      max-width: 400px;
-      text-align: center;
-      font-size: 1rem;
-    }
-    .image-display {
-      display: block;
-      margin: 1rem auto;
-      width: 200px;
-    }
   </style>
 </head>
 <body>
+  <video id="background-video" autoplay loop muted>
+    <source id="video-source" src="" type="video/mp4">
+  </video>
   <div id="enter-overlay">
     <h1>Click to Enter</h1>
   </div>
-  <header>
-    <div class="input-container">
-      <input type="text" id="image-url" placeholder=""oninput="updateImage()">
-    </div>
-    <img id="dynamic-image" class="image-display" src="" alt="Dynamic Image">
-  </header>
   <div class="container">
     <h1>Peace.sh</h1>
     <hr>
@@ -129,14 +120,14 @@
       <li>I</li>
       <li>Am</li>
       <li>The</li>
-      <li>Matrix</li>
-      <li>Goat</li>
+      <li>Mooze</li>
+      <li>GOAT</li>
     </ul>
     <footer>
       <p>&copy; 2025 Peace.sh.</p>
     </footer>
   </div>
-  <audio id="background-music" src="https://peace.sh/media/song.mp3" loop=""></audio>
+  <audio id="background-music" src="https://vessel.sh/media/song.mp3" loop=""></audio>
   <script>
     document.getElementById('enter-overlay').addEventListener('click', function() {
       this.classList.add('fade-out');
@@ -147,11 +138,6 @@
         this.remove();
       }, 1000);
     });
-    
-    function updateImage() {
-      var imageUrl = document.getElementById('image-url').value;
-      document.getElementById('dynamic-image').src = imageUrl;
-    }
   </script>
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eefc3b381d2c44d3921efa54d6259b11"}'></script>
 </body>
