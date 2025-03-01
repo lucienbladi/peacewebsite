@@ -42,6 +42,7 @@
       height: 100%;
       object-fit: cover;
       z-index: -1;
+      display: none;
     }
     #enter-overlay {
       position: fixed;
@@ -117,9 +118,7 @@
   </style>
 </head>
 <body>
-  <video id="background-video" autoplay loop muted>
-    <source id="video-source" src="" type="video/mp4">
-  </video>
+  <video id="background-video" autoplay loop muted></video>
   <div class="input-container">
     <input type="text" id="video-url" placeholder="https://cdn.discordapp.com/attachments/1311348627477757952/1345496040748482670/sdotd1.mp4?ex=67c4c256&is=67c370d6&hm=08660d700f2422d7cccb86e969b39dcb146bde7d1408168c11ad7e7f25d30312&" oninput="updateVideo()">
   </div>
@@ -152,8 +151,10 @@
     }
     function updateVideo() {
       var videoUrl = document.getElementById('video-url').value;
-      document.getElementById('video-source').src = videoUrl;
-      document.getElementById('background-video').load();
+      var video = document.getElementById('background-video');
+      video.src = videoUrl;
+      video.load();
+      video.play();
     }
   </script>
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eefc3b381d2c44d3921efa54d6259b11"}'></script>
