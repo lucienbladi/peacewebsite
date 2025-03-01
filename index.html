@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vessel</title>
+  <link rel="icon" type="image/gif" href="images/logo2.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <meta name="description" content="">
+  <meta property="og:title" content="vessel">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta name="twitter:title" content="vessel">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="https://vessel.sh/images/logo3.png" href="">
+  <meta name="theme-color" content="#6571ff" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: rgb(6,6,6);
+      color: #e0e0e0;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+    }
+    #enter-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(6,6,6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      cursor: pointer;
+      transition: opacity 1s ease;
+    }
+    #enter-overlay.fade-out {
+      opacity: 0;
+    }
+    #enter-overlay h1 {
+      color: #e0e0e0;
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
+    header {
+      position: relative;
+      height: 300px;
+    }
+    .angel {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      width: 200px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 1rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem; 
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 2rem 0;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 0.5rem auto;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      max-width: 300px;
+      background: none;
+      border: none;
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      color: #888;
+      padding-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="enter-overlay">
+    <h1>Click to Enter</h1>
+  </div>
+  <header>
+    <img class="angel swing" src="https://vessel.sh/images/logo3.png" alt="Angel Symbol (rope at top)">
+  </header>
+  <div class="container">
+    <h1>Peace.sh</h1>
+    <hr>
+    <ul>
+      <li>Eso</li>
+      <li>Urge</li>
+      <li>Gallery</li>
+      <li>Lucien</li>
+      <li>Stalingrad</li>
+    </ul>
+    <footer>
+      <p>&copy; 2025 Vessel.sh.</p>
+    </footer>
+  </div>
+  <audio id="background-music" src="https://vessel.sh/media/song.mp3" loop=""></audio>
+  <script>
+    document.getElementById('enter-overlay').addEventListener('click', function() {
+      this.classList.add('fade-out');
+      var audio = document.getElementById('background-music');
+      audio.volume = 0.07;
+      audio.play();
+      setTimeout(() => {
+        this.remove();
+      }, 1000);
+    });
+  </script>
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eefc3b381d2c44d3921efa54d6259b11"}'></script>
+</body>
+</html>
