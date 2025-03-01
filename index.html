@@ -17,6 +17,29 @@
   <meta name="theme-color" content="#6571ff" />
 
   <style>
+    #enter-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      cursor: pointer;
+      transition: opacity 1s ease;
+    }
+    #enter-overlay.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #enter-overlay h1 {
+      color: #e0e0e0;
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -52,10 +75,19 @@
   </style>
 </head>
 <body>
+  <div id="enter-overlay" onclick="enterSite()">
+    <h1>Click to Enter</h1>
+  </div>
   <video id="background-video" autoplay loop muted>
     <source src="https://files.catbox.moe/sdotd1.mp4" type="video/mp4">
   </video>
 <script>
+  function enterSite() {
+    document.getElementById('enter-overlay').classList.add('fade-out');
+    var video = document.getElementById('background-video');
+    video.muted = false;
+    video.play();
+  }
   document.addEventListener('click', function() {
     var video = document.getElementById('background-video');
     video.muted = false;
