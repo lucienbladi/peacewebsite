@@ -59,12 +59,6 @@
       position: relative;
       height: 300px;
     }
-    .angel {
-      position: absolute;
-      top: 15px;
-      left: 50%;
-      width: 200px;
-    }
     .container {
       max-width: 700px;
       margin: 0 auto;
@@ -100,6 +94,22 @@
       color: #888;
       padding-bottom: 1rem;
     }
+    .input-container {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .input-container input {
+      padding: 0.5rem;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      font-size: 1rem;
+    }
+    .image-display {
+      display: block;
+      margin: 1rem auto;
+      width: 200px;
+    }
   </style>
 </head>
 <body>
@@ -107,20 +117,23 @@
     <h1>Click to Enter</h1>
   </div>
   <header>
-    <img class="angel swing" src="https://vessel.sh/images/logo3.png" alt="Angel Symbol (rope at top)">
+    <div class="input-container">
+      <input type="text" id="image-url" placeholder="https://files.catbox.moe/sdotd1.mp4" oninput="updateImage()">
+    </div>
+    <img id="dynamic-image" class="image-display" src="" alt="Dynamic Image">
   </header>
   <div class="container">
     <h1>Peace.sh</h1>
     <hr>
     <ul>
-      <li>Eso</li>
-      <li>Urge</li>
-      <li>Gallery</li>
-      <li>Lucien</li>
-      <li>Stalingrad</li>
+      <li>I</li>
+      <li>Am</li>
+      <li>The</li>
+      <li>Matrix</li>
+      <li>Goat</li>
     </ul>
     <footer>
-      <p>&copy; 2025 Vessel.sh.</p>
+      <p>&copy; 2025 Peace.sh.</p>
     </footer>
   </div>
   <audio id="background-music" src="https://vessel.sh/media/song.mp3" loop=""></audio>
@@ -134,6 +147,11 @@
         this.remove();
       }, 1000);
     });
+    
+    function updateImage() {
+      var imageUrl = document.getElementById('image-url').value;
+      document.getElementById('dynamic-image').src = imageUrl;
+    }
   </script>
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eefc3b381d2c44d3921efa54d6259b11"}'></script>
 </body>
