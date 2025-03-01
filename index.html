@@ -52,8 +52,15 @@
   </style>
 </head>
 <body>
-  <video id="background-video" autoplay loop>
+  <video id="background-video" autoplay loop muted>
     <source src="https://files.catbox.moe/sdotd1.mp4" type="video/mp4">
   </video>
+<script>
+  document.addEventListener('click', function() {
+    var video = document.getElementById('background-video');
+    video.muted = false;
+    video.play();
+  });
+</script>
 </body>
 </html>
